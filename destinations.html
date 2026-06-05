@@ -9,6 +9,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .dest-carousel{position:relative;}
+    .dest-carousel__track{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding:4px 2px 18px;scrollbar-width:thin;}
+    .dest-carousel__track::-webkit-scrollbar{height:8px;}
+    .dest-carousel__track::-webkit-scrollbar-thumb{background:#d8c7af;border-radius:4px;}
+    .dest-carousel .dest-card{flex:0 0 240px;scroll-snap-align:start;}
+    .dest-carousel__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:none;cursor:pointer;background:#fff;color:#3a2a1e;box-shadow:0 3px 12px rgba(44,24,16,.22);font-size:1.5rem;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+    .dest-carousel__arrow:hover{background:#f2e8d9;}
+    .dest-carousel__arrow--left{left:-10px;}
+    .dest-carousel__arrow--right{right:-10px;}
+    .dest-card--add{display:flex;align-items:center;justify-content:center;text-align:center;border:2px dashed #c8693e;background:#fff;color:#c8693e;font-weight:700;text-decoration:none;}
+    .dest-card--add .plus{display:block;font-size:2rem;line-height:1;margin-bottom:6px;}
+    @media (max-width:480px){.dest-carousel .dest-card{flex:0 0 72%;}}
+  </style>
 </head>
 <body>
 
@@ -43,7 +57,7 @@
     <div class="container text-center">
       <div class="stats-row" style="justify-content:center;">
         <div class="stat"><div class="stat__num">20+</div><div class="stat__label">Countries</div></div>
-        <div class="stat"><div class="stat__num">5</div><div class="stat__label">Continents</div></div>
+        <div class="stat"><div class="stat__num">2</div><div class="stat__label">Continents</div></div>
         <div class="stat"><div class="stat__num">4+</div><div class="stat__label">Years Travelling</div></div>
         <div class="stat"><div class="stat__num">100+</div><div class="stat__label">Stories Written</div></div>
       </div>
@@ -90,7 +104,9 @@
       <!-- Europe -->
       <div style="margin-bottom:56px;">
         <h3 style="margin-bottom:20px; color:var(--terracotta);">🌍 Europe</h3>
-        <div class="destinations-grid">
+        <div class="dest-carousel">
+          <button class="dest-carousel__arrow dest-carousel__arrow--left" type="button" aria-label="Scroll left">‹</button>
+          <div class="dest-carousel__track">
           <div class="dest-card" style="cursor:pointer;">
             <img src="images/destinations/madarasi,romania.jpeg" alt="Snowboarder catching air between snow-laden pine trees at Madarasi ski resort, Romania" loading="lazy">
             <div class="dest-card__overlay">
@@ -115,13 +131,26 @@
               <div><div class="dest-card__name">Spain</div><div class="dest-card__count">2 stories</div></div>
             </div>
           </div>
+            <!-- =========================================================
+                 TO ADD A COUNTRY: copy ANY one <div class="dest-card"> ... </div>
+                 block above, paste it here, then change the image, name and count.
+                 Photos you already have, ready to use:
+                   Italy   -> images/destinations/cortina-d-ampezzo,italy.jpeg
+                            (or images/destinations/bassano-del-grapa-veneto-italy.jpeg)
+                   Ukraine -> images/destinations/ukraine-bukovel-ski.jpeg
+                 ========================================================= -->
+            <a href="#" class="dest-card dest-card--add" aria-label="Add a country"><span><span class="plus">+</span>Add a country</span></a>
+          </div>
+          <button class="dest-carousel__arrow dest-carousel__arrow--right" type="button" aria-label="Scroll right">›</button>
         </div>
       </div>
 
       <!-- Asia -->
       <div style="margin-bottom:56px;">
         <h3 style="margin-bottom:20px; color:var(--terracotta);">🌏 Asia</h3>
-        <div class="destinations-grid">
+        <div class="dest-carousel">
+          <button class="dest-carousel__arrow dest-carousel__arrow--left" type="button" aria-label="Scroll left">‹</button>
+          <div class="dest-carousel__track">
           <div class="dest-card">
             <img src="images/destinations/phu-quoc-vietnam.jpeg" alt="Silhouetted group watching sunset on Phu Quoc beach under a canopy of palm fronds, Vietnam" loading="lazy">
             <div class="dest-card__overlay">
@@ -146,22 +175,37 @@
               <div><div class="dest-card__name">Laos</div><div class="dest-card__count">3 stories</div></div>
             </div>
           </div>
+            <!-- =========================================================
+                 TO ADD A COUNTRY: copy ANY one <div class="dest-card"> ... </div>
+                 block above, paste it here, then change the image, name and count.
+                 Photos you already have, ready to use:
+                   Malaysia  -> images/destinations/borneo,malaysia.jpeg
+                              (or images/destinations/kuala-lumpur,malaysia.jpeg)
+                   Singapore -> images/destinations/singapore.jpeg
+                   Nepal     -> images/destinations/annapurna-nepal.jpeg
+                 ========================================================= -->
+            <a href="#" class="dest-card dest-card--add" aria-label="Add a country"><span><span class="plus">+</span>Add a country</span></a>
+          </div>
+          <button class="dest-carousel__arrow dest-carousel__arrow--right" type="button" aria-label="Scroll right">›</button>
         </div>
       </div>
 
-      <!-- Other continents placeholders -->
+      <!-- AMERICAS & AFRICA are hidden until you have destinations there.
+           To show them again: delete this opening comment line and the closing comment line at the end of this block,
+           then replace each dashed box with real <div class="dest-card"> cards.
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
-        <div style="background:var(--white); border-radius:8px; padding:28px; border:2px dashed var(--sand-dark); text-align:center;">
+        <div style="background:#fff; border-radius:8px; padding:28px; border:2px dashed #d8c7af; text-align:center;">
           <div style="font-size:1.8rem; margin-bottom:10px;">🌎</div>
           <h3 style="margin-bottom:8px;">Americas</h3>
-          <p style="color:var(--text-muted); font-size:0.85rem;">Add your South & North America destinations here as you visit them.</p>
+          <p style="color:#8a7a66; font-size:0.85rem;">Add your South & North America destinations here as you visit them.</p>
         </div>
-        <div style="background:var(--white); border-radius:8px; padding:28px; border:2px dashed var(--sand-dark); text-align:center;">
+        <div style="background:#fff; border-radius:8px; padding:28px; border:2px dashed #d8c7af; text-align:center;">
           <div style="font-size:1.8rem; margin-bottom:10px;">🌍</div>
           <h3 style="margin-bottom:8px;">Africa</h3>
-          <p style="color:var(--text-muted); font-size:0.85rem;">Add your African destinations here as you visit them.</p>
+          <p style="color:#8a7a66; font-size:0.85rem;">Add your African destinations here as you visit them.</p>
         </div>
       </div>
+      -->
 
     </div>
   </section>
@@ -186,7 +230,6 @@
         <div class="tag-chip">✓ Italy</div>
         <div class="tag-chip">✓ Spain</div>
         <div class="tag-chip">✓ Ukraine</div>
-        <div class="tag-chip">✓ Spain</div>
       </div>
       <p style="color:var(--text-muted); font-size:0.8rem; margin-top:16px;">✓ = guide published</p>
     </div>
@@ -252,5 +295,16 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.dest-carousel').forEach(function(c){
+      var track=c.querySelector('.dest-carousel__track');
+      var card=track.querySelector('.dest-card');
+      var step=function(){return (card?card.offsetWidth:240)+16;};
+      var l=c.querySelector('.dest-carousel__arrow--left');
+      var r=c.querySelector('.dest-carousel__arrow--right');
+      if(l)l.addEventListener('click',function(){track.scrollBy({left:-step()*2,behavior:'smooth'});});
+      if(r)r.addEventListener('click',function(){track.scrollBy({left:step()*2,behavior:'smooth'});});
+    });
+  </script>
 </body>
 </html>
