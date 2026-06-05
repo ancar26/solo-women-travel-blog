@@ -21,6 +21,9 @@
     .dest-carousel__arrow--right{right:-10px;}
     .dest-card--add{display:flex;align-items:center;justify-content:center;text-align:center;border:2px dashed #c8693e;background:#fff;color:#c8693e;font-weight:700;text-decoration:none;}
     .dest-card--add .plus{display:block;font-size:2rem;line-height:1;margin-bottom:6px;}
+    a.dest-card{text-decoration:none;display:block;transition:opacity .18s;}
+    a.dest-card:hover{opacity:.85;}
+    .dest-card__count--soon{color:#b0a090;font-style:italic;}
     @media (max-width:480px){.dest-carousel .dest-card{flex:0 0 72%;}}
   </style>
 </head>
@@ -107,64 +110,58 @@
         <div class="dest-carousel">
           <button class="dest-carousel__arrow dest-carousel__arrow--left" type="button" aria-label="Scroll left">‹</button>
           <div class="dest-carousel__track">
-          <div class="dest-card" style="cursor:pointer;">
+          <a class="dest-card" href="blog.html?country=romania">
             <img src="images/destinations/madarasi,romania.jpeg" alt="Snowboarder catching air between snow-laden pine trees at Madarasi ski resort, Romania" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Romania</div><div class="dest-card__count">12 stories</div></div>
+              <div><div class="dest-card__name">Romania</div><div class="dest-card__count" data-country="romania">9 stories</div></div>
             </div>
-          </div>
-          <div class="dest-card">
+          </a>
+          <a class="dest-card" href="blog.html?country=portugal">
             <img src="images/destinations/azores-sao-miguel,portugal.jpeg" alt="Dramatic coastal cliffs of Sao Miguel, Azores, with deep blue Atlantic ocean and stormy skies" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Portugal</div><div class="dest-card__count">6 stories</div></div>
+              <div><div class="dest-card__name">Portugal</div><div class="dest-card__count" data-country="portugal">8 stories</div></div>
             </div>
-          </div>
-          <div class="dest-card">
+          </a>
+          <a class="dest-card" href="blog.html?country=france">
             <img src="images/destinations/nice, france.jpeg" alt="Colourful old town rooftops and the Bay of Angels, Nice, France" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">France</div><div class="dest-card__count">3 stories</div></div>
+              <div><div class="dest-card__name">France</div><div class="dest-card__count" data-country="france">1 story</div></div>
             </div>
-          </div>
-          <div class="dest-card">
+          </a>
+          <a class="dest-card" href="blog.html?country=spain">
             <img src="images/destinations/tenerife,canary-islands.jpeg" alt="Volcanic landscape of Tenerife, Canary Islands, Spain" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Spain</div><div class="dest-card__count">2 stories</div></div>
+              <div><div class="dest-card__name">Spain</div><div class="dest-card__count" data-country="spain">7 stories</div></div>
             </div>
-          </div>
-          <div class="dest-card">
-            <img src="images/destinations/tenerife,canary-islands.jpeg" alt="Volcanic landscape of Tenerife, Canary Islands, Spain" loading="lazy">
+          </a>
+          <a class="dest-card" href="blog.html?country=italy">
+            <img src="images/destinations/cortina-d-ampezzo,italy.jpeg" alt="Dolomites, Cortina d'Ampezzo, Italy" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Greece</div><div class="dest-card__count">2 stories</div></div>
+              <div><div class="dest-card__name">Italy</div><div class="dest-card__count" data-country="italy">1 story</div></div>
             </div>
-          </div>
-            <div class="dest-card">
-              <img src="images/destinations/tenerife,canary-islands.jpeg" alt="Volcanic landscape of Tenerife, Canary Islands, Spain" loading="lazy">
-              <div class="dest-card__overlay">
-                <div><div class="dest-card__name">Italy</div><div class="dest-card__count">2 stories</div></div>
-              </div>
+          </a>
+          <a class="dest-card" href="blog.html?country=croatia">
+            <img src="images/about/6C4CE934-D695-460B-8D88-CEB2EB5910F5_1_105_c.jpeg" alt="Cycling from Romania to Croatia — a rainbow over the road" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">Croatia</div><div class="dest-card__count" data-country="croatia">1 story</div></div>
             </div>
+          </a>
             <div class="dest-card">
-              <img src="images/destinations/tenerife,canary-islands.jpeg" alt="Volcanic landscape of Tenerife, Canary Islands, Spain" loading="lazy">
+              <img src="images/destinations/tenerife,canary-islands.jpeg" alt="Greece — stories coming soon" loading="lazy">
               <div class="dest-card__overlay">
-                <div><div class="dest-card__name">Germany</div><div class="dest-card__count">2 stories</div></div>
-              </div>
-            </div>
-            <div class="dest-card">
-              <img src="images/destinations/tenerife,canary-islands.jpeg" alt="Volcanic landscape of Tenerife, Canary Islands, Spain" loading="lazy">
-              <div class="dest-card__overlay">
-                <div><div class="dest-card__name">Austria</div><div class="dest-card__count">2 stories</div></div>
+                <div><div class="dest-card__name">Greece</div><div class="dest-card__count dest-card__count--soon">coming soon</div></div>
               </div>
             </div>
             <div class="dest-card">
               <img src="images/destinations/budapest.jpeg" alt="Budapest, Hungary" loading="lazy">
               <div class="dest-card__overlay">
-                <div><div class="dest-card__name">Budapest</div><div class="dest-card__count">2 stories</div></div>
+                <div><div class="dest-card__name">Hungary</div><div class="dest-card__count dest-card__count--soon">coming soon</div></div>
               </div>
             </div>
             <div class="dest-card">
               <img src="images/destinations/leuven,belgium.jpeg" alt="Leuven, Belgium" loading="lazy">
               <div class="dest-card__overlay">
-                <div><div class="dest-card__name">Belgium</div><div class="dest-card__count">2 stories</div></div>
+                <div><div class="dest-card__name">Belgium</div><div class="dest-card__count dest-card__count--soon">coming soon</div></div>
               </div>
             </div>
             <!-- =========================================================
@@ -187,46 +184,46 @@
         <div class="dest-carousel">
           <button class="dest-carousel__arrow dest-carousel__arrow--left" type="button" aria-label="Scroll left">‹</button>
           <div class="dest-carousel__track">
+          <a class="dest-card" href="blog.html?country=thailand">
+            <img src="images/destinations/koh-phangan-thailand.jpeg" alt="Lone fishing boat on a glassy amber sea at sunset off Koh Phangan, Thailand" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">Thailand</div><div class="dest-card__count" data-country="thailand">1 story</div></div>
+            </div>
+          </a>
           <div class="dest-card">
             <img src="images/destinations/phu-quoc-vietnam.jpeg" alt="Silhouetted group watching sunset on Phu Quoc beach under a canopy of palm fronds, Vietnam" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Vietnam</div><div class="dest-card__count">8 stories</div></div>
-            </div>
-          </div>
-          <div class="dest-card">
-            <img src="images/destinations/koh-phangan-thailand.jpeg" alt="Lone fishing boat on a glassy amber sea at sunset off Koh Phangan, Thailand" loading="lazy">
-            <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Thailand</div><div class="dest-card__count">5 stories</div></div>
+              <div><div class="dest-card__name">Vietnam</div><div class="dest-card__count dest-card__count--soon">coming soon</div></div>
             </div>
           </div>
           <div class="dest-card">
             <img src="images/destinations/bali,indonesia.jpeg" alt="Cascading rice terraces catching morning light through tropical palms and overcast skies, Bali, Indonesia" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Indonesia</div><div class="dest-card__count">6 stories</div></div>
+              <div><div class="dest-card__name">Indonesia</div><div class="dest-card__count dest-card__count--soon">coming soon</div></div>
             </div>
           </div>
           <div class="dest-card">
             <img src="images/destinations/vang-vieng-laos.jpeg" alt="Sweeping mountain valley view from a rocky summit above Vang Vieng, Laos, with a winding road below" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Laos</div><div class="dest-card__count">3 stories</div></div>
+              <div><div class="dest-card__name">Laos</div><div class="dest-card__count dest-card__count--soon">coming soon</div></div>
             </div>
           </div>
           <div class="dest-card">
             <img src="images/destinations/annapurna-nepal.jpeg" alt="Himalayan mountain range with snow-capped peaks and clear blue sky, Nepal" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Nepal</div><div class="dest-card__count">3 stories</div></div>
+              <div><div class="dest-card__name">Nepal</div><div class="dest-card__count dest-card__count--soon">coming soon</div></div>
             </div>
           </div>
           <div class="dest-card">
             <img src="images/destinations/borneo,malaysia.jpeg" alt="Borneo, Malaysia" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Malaysia</div><div class="dest-card__count">3 stories</div></div>
+              <div><div class="dest-card__name">Malaysia</div><div class="dest-card__count dest-card__count--soon">coming soon</div></div>
             </div>
           </div>
           <div class="dest-card">
             <img src="images/destinations/singapore.jpeg" alt="Singapore" loading="lazy">
             <div class="dest-card__overlay">
-              <div><div class="dest-card__name">Singapore</div><div class="dest-card__count">2 stories</div></div>
+              <div><div class="dest-card__name">Singapore</div><div class="dest-card__count dest-card__count--soon">coming soon</div></div>
             </div>
           </div>
             <!-- =========================================================
@@ -517,6 +514,7 @@
 
   <script src="js/main.js"></script>
   <script>
+    // Carousel arrows
     document.querySelectorAll('.dest-carousel').forEach(function(c){
       var track=c.querySelector('.dest-carousel__track');
       var card=track.querySelector('.dest-card');
@@ -526,6 +524,29 @@
       if(l)l.addEventListener('click',function(){track.scrollBy({left:-step()*2,behavior:'smooth'});});
       if(r)r.addEventListener('click',function(){track.scrollBy({left:step()*2,behavior:'smooth'});});
     });
+
+    // Dynamic story counts — fetch blog.html and count data-country per country
+    fetch('blog.html')
+      .then(function(r){ return r.text(); })
+      .then(function(html){
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, 'text/html');
+        var counts = {};
+        doc.querySelectorAll('article.card[data-country]').forEach(function(a){
+          (a.dataset.country || '').split(/\s+/).forEach(function(c){
+            if (c) counts[c] = (counts[c] || 0) + 1;
+          });
+        });
+        document.querySelectorAll('.dest-card__count[data-country]').forEach(function(el){
+          var c = el.dataset.country;
+          var n = counts[c] || 0;
+          if (n > 0) {
+            el.textContent = n + (n === 1 ? ' story' : ' stories');
+            el.classList.remove('dest-card__count--soon');
+          }
+        });
+      })
+      .catch(function(){});
   </script>
 </body>
 </html>
