@@ -1,0 +1,2 @@
+- [Travel website project — brand, photo assignments, design decisions](project-travel-website.md) — full photo library map and all slot assignments made in session 1
+- [Anca Rada — user profile](user-anca-rada.md) — Romanian solo traveller, sports enthusiast, remote worker, author-in-progress
