@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog — Anca Rada</title>
+  <meta name="description" content="Travel stories, solo adventures, sports, and remote work — written and narrated by Anca Rada."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Anca <span>Rada</span></a>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="solo-travel.html">Solo Female Travel</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="section-label page-hero__label">All Stories</p>
+      <h1 class="page-hero__title">The Blog</h1>
+      <p class="page-hero__subtitle">Real stories from the road — with a voiceover option on every post. Read or listen, your call.</p>
+    </div>
+  </div>
+
+  <section class="section section--cream">
+    <div class="container">
+
+      <!-- FEATURED POST -->
+      <div style="margin-bottom:56px;">
+        <p class="section-label">Featured</p>
+        <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:40px; background:var(--white); border-radius:8px; overflow:hidden; box-shadow:0 2px 16px rgba(44,24,16,0.08);">
+          <img src="images/about/6304A36B-825F-43CE-9145-7A2A160B2C09_1_105_c.jpeg" alt="Anca with arms outstretched on a hilltop summit above a volcanic crater lake, Azores" style="width:100%; height:100%; min-height:380px; object-fit:cover;" loading="eager">
+          <div style="padding:40px 40px 40px 0; display:flex; flex-direction:column; justify-content:center;">
+            <p class="card__tag">Solo Female Travel</p>
+            <h2 style="margin-bottom:16px;">One Year of Solo Travel: What I Wish I'd Known Before I Left</h2>
+            <p style="color:var(--text-muted); margin-bottom:20px;">The things no travel blog told me. The things I had to figure out alone at 11pm in a city where I didn't speak the language. And the things that made every bit of it worth it.</p>
+            <p class="card__meta" style="margin-bottom:20px;">June 2025 · 15 min read</p>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px; padding:14px 0; border-top:1px solid var(--sand-dark); border-bottom:1px solid var(--sand-dark);">
+              <button class="audio-play-btn" aria-label="Play voiceover">
+                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+              <div class="audio-bar" style="flex:1;"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen to this story</span>
+            </div>
+            <a href="#" class="btn btn-primary" style="align-self:flex-start;">Read the story</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILTERS -->
+      <div class="blog-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="travel">Travel Stories</button>
+        <button class="filter-btn" data-filter="solo">Solo Female Travel</button>
+        <button class="filter-btn" data-filter="sports">Sports & Adventure</button>
+        <button class="filter-btn" data-filter="remote">Remote Work</button>
+        <button class="filter-btn" data-filter="budget">Budget & Tips</button>
+      </div>
+
+      <!-- POSTS GRID -->
+      <div class="cards-grid">
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/blog/dolomites-hiking/crazy-sky-dolomites-hile.jpeg" alt="Anca walking on a snowy mountain path under a violent orange and red sunset sky in the Dolomites" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">A Week in the Dolomites: Five Hikes That Made Me Stop Walking Just to Look</h3>
+            <p class="card__excerpt">Late-season hiking around Cortina d'Ampezzo — Tre Cime, Lago di Sorapis, Lago di Braies, and the sky that made me forget where I was going.</p>
+            <p class="card__meta">Cortina d'Ampezzo · 8 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="dolomites-cortina.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="remote">
+          <div class="card__img"><img src="images/blog/explore-madeira/digital-nomad-friends-madeira-2months-trial.jpeg" alt="Group of five friends watching sunset above Funchal, Madeira" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Remote Work</p>
+            <h3 class="card__title">Madeira in March: Rain, Cowork, and the People Who Made It Worth It</h3>
+            <p class="card__excerpt">Month one of full-time remote travel. The trails were closed. Something better opened instead.</p>
+            <p class="card__meta">Funchal, Madeira · 7 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="madeira-march.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/blog/explore-madeira/pico-de-ariero-popular-hike-madeira.jpeg" alt="Lone figure climbing Pico Arieiro steps at dawn, above the clouds" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">The Hikes That Made Me Understand Madeira</h3>
+            <p class="card__excerpt">Pico Arieiro at dawn, 25 Fontes, swimming under waterfalls, running in fog with cows.</p>
+            <p class="card__meta">Madeira · 8 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="madeira-hikes.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="travel">
+          <div class="card__img"><img src="images/blog/explore-madeira/ad-hoc-bush-hike2.jpeg" alt="Narrow red dirt path through dense green ferns, Madeira moorland" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Travel Stories</p>
+            <h3 class="card__title">Off the Map: What Happens When You Leave the Trail</h3>
+            <p class="card__excerpt">No path. No plan. A yellow bush in the wind and a carpet of daisies at the end.</p>
+            <p class="card__meta">Madeira · 4 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="madeira-bush-hike.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="travel">
+          <div class="card__img"><img src="images/blog/porto-santo-adventures/ED1D1718-583F-49B2-B982-741E53F7694E_1_105_c.jpeg" alt="Porto Santo's long golden beach with dramatic storm clouds and turquoise water" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Travel Stories</p>
+            <h3 class="card__title">Porto Santo: One Day, Two Beaches, Grilled Octopus, and an Airport Sunset</h3>
+            <p class="card__excerpt">The island next door. A day trip that ended with sleeping on the airport floor and the best sunset of the trip.</p>
+            <p class="card__meta">Porto Santo · 6 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="porto-santo.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/blog/skiing-trial-and-error/025B978A-32EB-4CD4-836B-53EFF59EA8A4_1_105_c.jpeg" alt="Group of skiers at golden hour on a Romanian ski slope" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">Ski Camp: Trial, Error, and Fire Shows at Night</h3>
+            <p class="card__excerpt">Some people were jumping between trees. I was looking at my ski tips. Both are valid.</p>
+            <p class="card__meta">Romanian Carpathians · 7 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="skiing-trial-and-error.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/blog/ice-climbing-cluj-bride-waterfall/632DB222-863F-4183-AC61-784118999C99_1_105_c.jpeg" alt="Two climbers ascending a frozen waterfall near Cluj" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">Climbing a Frozen Waterfall 30 Minutes from Cluj</h3>
+            <p class="card__excerpt">In winter, Cascada Mireasa freezes solid. Ice axes, crampons, and the thunk of metal finding purchase.</p>
+            <p class="card__meta">Cascada Mireasa, Romania · 5 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="ice-climbing-bride-waterfall.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <!-- Stories from the road -->
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/about/6C4CE934-D695-460B-8D88-CEB2EB5910F5_1_105_c.jpeg" alt="Anca cycling solo on a road with a full rainbow overhead" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">Dogs at the Border, Blindness in a Tunnel, Fireflies at Night</h3>
+            <p class="card__excerpt">Three moments from a bicycle trip from Romania to Croatia that I'll never forget.</p>
+            <p class="card__meta">Romania → Croatia · 7 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="croatia-cycling.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="solo">
+          <div class="card__img"><img src="images/destinations/nice, france.jpeg" alt="Nice coastline, France" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Solo Female Travel</p>
+            <h3 class="card__title">I Burned My Eyelashes in Nice. I'd Do It Again.</h3>
+            <p class="card__excerpt">My first solo remote work trip. What the Côte d'Azur taught me — the hard way.</p>
+            <p class="card__meta">Nice, France · 6 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="nice-france.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/destinations/tenerife,canary-islands.jpeg" alt="Volcanic landscape of Tenerife" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">El Teide: The Last 500 Metres, We Crawled</h3>
+            <p class="card__excerpt">A night hike up Spain's highest peak. Wind so strong you couldn't stand upright.</p>
+            <p class="card__meta">Tenerife · 6 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="el-teide.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="solo">
+          <div class="card__img"><img src="images/destinations/azores-sao-miguel,portugal.jpeg" alt="Azores coastal cliffs, Sao Miguel" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Solo Female Travel</p>
+            <h3 class="card__title">My Driving Licence Was Expired. The Azores Gave Me Better.</h3>
+            <p class="card__excerpt">No car, no plan. How I accidentally built the best travel week of my life.</p>
+            <p class="card__meta">Azores · 6 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="azores-no-licence.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/destinations/madeira,portugal.jpeg" alt="Madeira hiking trail above the clouds" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">The Biggest Smile I Ever Had Came After Going Down a Waterfall</h3>
+            <p class="card__excerpt">Waterfall rappelling in Madeira. The noise, the power, and the face in the mirror after.</p>
+            <p class="card__meta">Madeira · 5 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="madeira-waterfall.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/blog/mountain-bike/vladeasa-peak-cluj-mtb.jpeg" alt="Anca at Vlădeasa summit, arms raised, holding Orbea" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">Vlădeasa, 1,835m: Up Here with the Orbea and the Romanian Sky</h3>
+            <p class="card__excerpt">Climbing the highest peak in the Apuseni by bike — the effort, the summit, the Strava route.</p>
+            <p class="card__meta">Apuseni Mountains · 5 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="vladeasa-peak.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/blog/mountain-bike/autumn-colors-mountain-bike.jpeg" alt="Orbea on a road through spectacular autumn forest and mountains" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">The Orbea Knows All Four Seasons</h3>
+            <p class="card__excerpt">First ride to summer cherries to autumn gold to mud — a year on the mint Orbea around Cluj.</p>
+            <p class="card__meta">Cluj-Napoca · 6 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="orbea-four-seasons.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/blog/mountain-bike/faget-cluj.jpeg" alt="Anca with Orbea in a green meadow near Cluj" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">The Trails Around Cluj I Ride on Repeat</h3>
+            <p class="card__excerpt">Fagăt, Muntele Rece, Valea Ierii, Finișel — local rides that never stop giving.</p>
+            <p class="card__meta">Cluj-Napoca · 7 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="cluj-trails.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/blog/mtb-downhill/in-love-with-mtb.jpeg" alt="Anca kneeling beside her Orbea MTB in autumn grass, blue sky" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">I Came Back with Half the Trail on My Face. Best Day.</h3>
+            <p class="card__excerpt">A muddy downhill MTB day at Marisel near Cluj — and the moment I understood why people fall so hard for this sport.</p>
+            <p class="card__meta">Marisel, Cluj · 6 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="mtb-downhill-marisel.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <!-- Thailand series — real story pages -->
+        <article class="card" data-category="travel">
+          <div class="card__img"><img src="images/blog/chiang-mai-temples/chiang-mai-thailand.jpeg" alt="Golden Buddha under lantern-draped tree, Chiang Mai temple" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Travel Stories</p>
+            <h3 class="card__title">Chiang Mai's Temples Are Magical — But Not the Ones Everyone Photographs</h3>
+            <p class="card__excerpt">Skip the tourist queues. I found the one with the lantern tree by accident, on a scooter, with no map open.</p>
+            <p class="card__meta">Thailand · 6 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="chiang-mai-temples.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="solo">
+          <div class="card__img"><img src="images/blog/scooter-asia/going-by-scooter.jpeg" alt="Anca in a helmet and mask on a scooter in a Thai city" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Solo Female Travel</p>
+            <h3 class="card__title">I Rented a Scooter Alone in Asia. Here's What Nobody Warned Me About.</h3>
+            <p class="card__excerpt">The nerves, the traffic, the wrong turns — and why it changed how I travel forever.</p>
+            <p class="card__meta">Thailand · 7 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="scooter-asia.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/blog/learning-to-dive/getting-ready-for-diving.jpeg" alt="Anca on a dive boat ready to go" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">Learning to Dive Solo: What the Open Water Course Doesn't Tell You</h3>
+            <p class="card__excerpt">I waited two years for someone to do this with. Then I stopped waiting.</p>
+            <p class="card__meta">Thailand · 8 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="learning-to-dive.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="travel">
+          <div class="card__img"><img src="images/blog/mango-sticky-rice/mango-sticky-rice.jpeg" alt="Mango sticky rice with coconut cream" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Travel Stories</p>
+            <h3 class="card__title">The Dish That Made Me Extend My Thailand Trip by a Week</h3>
+            <p class="card__excerpt">40 baht. A plastic table. The moment I finally stopped moving long enough to actually be somewhere.</p>
+            <p class="card__meta">Thailand · 5 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="mango-sticky-rice.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <!-- Older posts (articles coming soon) -->
+        <article class="card" data-category="travel">
+          <div class="card__img"><img src="images/destinations/phu-quoc-vietnam.jpeg" alt="Sunset over Phu Quoc beach, Vietnam" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Southeast Asia</p>
+            <h3 class="card__title">How I Spent 3 Weeks in Vietnam on a Remote Work Budget</h3>
+            <p class="card__excerpt">Cafés with fast Wi-Fi, $5 phở, and the best sunrise I've ever seen.</p>
+            <p class="card__meta">May 2025 · 8 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="solo">
+          <div class="card__img"><img src="images/destinations/romania,sibiu.jpeg" alt="Aerial view of Sibiu old town, Romania" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Solo Female Travel</p>
+            <h3 class="card__title">The Real Talk on Travelling Alone in Eastern Europe</h3>
+            <p class="card__excerpt">What people warned me about and what actually happened.</p>
+            <p class="card__meta">March 2025 · 10 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports">
+          <div class="card__img"><img src="images/about/87BE8307-E103-4A94-8366-3D93539A4512_1_105_c.jpeg" alt="Anca at the Retezat summit marker, Romanian Carpathians" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports & Adventure</p>
+            <h3 class="card__title">Hiking the Fagaras Ridge: A Weekend That Tested Everything</h3>
+            <p class="card__excerpt">Rain, fog, one wrong turn, and the most rewarding summit of my life.</p>
+            <p class="card__meta">January 2025 · 12 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="remote">
+          <div class="card__img"><img src="images/destinations/singapore.jpeg" alt="Singapore skyline" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Remote Work</p>
+            <h3 class="card__title">How I Found My First Remote Job While Travelling</h3>
+            <p class="card__excerpt">Platforms, pitches, failures, and the one thing that finally worked.</p>
+            <p class="card__meta">November 2024 · 9 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="travel">
+          <div class="card__img"><img src="images/about/6C4CE934-D695-460B-8D88-CEB2EB5910F5_1_105_c.jpeg" alt="Anca cycling solo on a rainy road in Transylvania under a full rainbow" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Romania</p>
+            <h3 class="card__title">Why Romania Completely Destroyed My Travel Expectations</h3>
+            <p class="card__excerpt">I went for a week. I stayed for a month. Here's why.</p>
+            <p class="card__meta">September 2024 · 11 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="budget">
+          <div class="card__img"><img src="images/blog/chiang-mai-temples/chiang-mai-thailand.jpeg" alt="Chiang Mai, Thailand" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Budget Travel</p>
+            <h3 class="card__title">My Real Monthly Budget as a Solo Traveller in Southeast Asia</h3>
+            <p class="card__excerpt">Every expense, broken down honestly — accommodation, food, transport, and surprises.</p>
+            <p class="card__meta">July 2024 · 7 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Load more placeholder -->
+      <div style="text-align:center; margin-top:48px;">
+        <button class="btn btn-outline">Load more stories</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VOICEOVER EXPLAINER -->
+  <section class="section section--sand">
+    <div class="container text-center">
+      <p class="section-label">Voiceover</p>
+      <h2 class="section-title">Every Story Has a Voice</h2>
+      <div class="divider divider--center"></div>
+      <p style="max-width:540px; margin:0 auto; color:var(--text-muted);">Each post on this blog comes with an audio version — narrated by me, Anca. Hit play on any story card and listen while you walk, commute, or stare out a window. Travel writing was always meant to be heard.</p>
+      <p style="margin-top:16px; color:var(--text-muted); font-size:0.85rem; font-style:italic;">🎙 Audio files will be uploaded per post. Placeholder player is shown on all cards.</p>
+    </div>
+  </section>
+
+  <section class="newsletter-band">
+    <div class="container">
+      <h2>New stories in your inbox</h2>
+      <p>No spam. Just real travel stories when they drop.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="your@email.com" required/>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <div class="footer__brand-name">Anca <span>Rada</span></div>
+          <p class="footer__tagline">Solo traveller. Sports enthusiast. Remote worker. Writing real stories from around the world.</p>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/ancar.l/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="TikTok">TK</a>
+            <a href="#" aria-label="YouTube">YT</a>
+            <a href="#" aria-label="Pinterest">PT</a>
+            <a href="https://www.strava.com/athletes/66986695" target="_blank" rel="noopener" aria-label="Strava">STR</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Explore</div>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="solo-travel.html">Solo Female Travel</a></li>
+            <li><a href="book.html">My Book</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Topics</div>
+          <ul>
+            <li><a href="#">Remote Work</a></li>
+            <li><a href="#">Hiking & Sports</a></li>
+            <li><a href="#">Budget Travel</a></li>
+            <li><a href="#">Packing Guides</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">More</div>
+          <ul>
+            <li><a href="about.html">About Anca</a></li>
+            <li><a href="contact.html">Work Together</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2025 Anca Rada. All rights reserved.</span>
+        <span>Made with ♥ on the road</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
