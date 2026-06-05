@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Destinations — Anca Rada</title>
+  <meta name="description" content="Countries visited, travel guides, and an interactive map of everywhere Anca Rada has been."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Anca <span>Rada</span></a>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="solo-travel.html">Solo Female Travel</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="section-label page-hero__label">Destinations</p>
+      <h1 class="page-hero__title">Where I've Been</h1>
+      <p class="page-hero__subtitle">20+ countries across 2 continents — with stories, guides, and an interactive map of everywhere the road has taken me.</p>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="section section--sand">
+    <div class="container text-center">
+      <div class="stats-row" style="justify-content:center;">
+        <div class="stat"><div class="stat__num">20+</div><div class="stat__label">Countries</div></div>
+        <div class="stat"><div class="stat__num">5</div><div class="stat__label">Continents</div></div>
+        <div class="stat"><div class="stat__num">4+</div><div class="stat__label">Years Travelling</div></div>
+        <div class="stat"><div class="stat__num">100+</div><div class="stat__label">Stories Written</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLARSTEPS / MAP EMBED -->
+  <section class="section section--cream">
+    <div class="container">
+      <p class="section-label">My Travel Map</p>
+      <h2 class="section-title">Track My Route</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted); margin-bottom:32px; max-width:600px;">
+        I use Polarsteps to track every trip in real time. Below you'll find an embed of my journey map — click any stop for photos, dates, and notes from that location.
+      </p>
+
+      <!--
+        TO EMBED A SPECIFIC TRIP:
+        1. Go to polarsteps.com/AncaLidia → open the trip → Share → Embed
+        2. Copy the iframe code and replace the div below with it
+        Individual trip embed format:
+        <iframe src="https://www.polarsteps.com/AncaLidia/TRIP_ID/embed"
+          width="100%" height="520" style="border:0; border-radius:8px;"
+          allowfullscreen loading="lazy"></iframe>
+      -->
+      <div class="map-embed" style="flex-direction:row; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap; text-align:left; padding:40px 48px;">
+        <div style="flex:1; min-width:220px;">
+          <p style="font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--terracotta); margin-bottom:10px;">Live on Polarsteps</p>
+          <h3 style="margin-bottom:12px; color:var(--brown-dark);">Follow Every Step in Real Time</h3>
+          <p style="color:var(--text-muted); margin-bottom:0;">I track all my trips on Polarsteps — every stop, photo, and journal entry, pinned to an interactive map. See where I am right now.</p>
+        </div>
+        <a href="https://www.polarsteps.com/AncaLidia" target="_blank" rel="noopener" class="btn btn-primary" style="white-space:nowrap; flex-shrink:0;">View my travel map →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTINENTS -->
+  <section class="section section--sand">
+    <div class="container">
+      <p class="section-label">Browse by Region</p>
+      <h2 class="section-title">Destinations by Continent</h2>
+      <div class="divider"></div>
+
+      <!-- Europe -->
+      <div style="margin-bottom:56px;">
+        <h3 style="margin-bottom:20px; color:var(--terracotta);">🌍 Europe</h3>
+        <div class="destinations-grid">
+          <div class="dest-card" style="cursor:pointer;">
+            <img src="images/destinations/madarasi,romania.jpeg" alt="Snowboarder catching air between snow-laden pine trees at Madarasi ski resort, Romania" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">Romania</div><div class="dest-card__count">12 stories</div></div>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img src="images/destinations/azores-sao-miguel,portugal.jpeg" alt="Dramatic coastal cliffs of Sao Miguel, Azores, with deep blue Atlantic ocean and stormy skies" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">Portugal</div><div class="dest-card__count">6 stories</div></div>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img src="images/destinations/nice, france.jpeg" alt="Colourful old town rooftops and the Bay of Angels, Nice, France" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">France</div><div class="dest-card__count">3 stories</div></div>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img src="images/destinations/tenerife,canary-islands.jpeg" alt="Volcanic landscape of Tenerife, Canary Islands, Spain" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">Tenerife</div><div class="dest-card__count">2 stories</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asia -->
+      <div style="margin-bottom:56px;">
+        <h3 style="margin-bottom:20px; color:var(--terracotta);">🌏 Asia</h3>
+        <div class="destinations-grid">
+          <div class="dest-card">
+            <img src="images/destinations/phu-quoc-vietnam.jpeg" alt="Silhouetted group watching sunset on Phu Quoc beach under a canopy of palm fronds, Vietnam" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">Vietnam</div><div class="dest-card__count">8 stories</div></div>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img src="images/destinations/koh-phangan-thailand.jpeg" alt="Lone fishing boat on a glassy amber sea at sunset off Koh Phangan, Thailand" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">Thailand</div><div class="dest-card__count">5 stories</div></div>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img src="images/destinations/bali,indonesia.jpeg" alt="Cascading rice terraces catching morning light through tropical palms and overcast skies, Bali, Indonesia" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">Bali</div><div class="dest-card__count">6 stories</div></div>
+            </div>
+          </div>
+          <div class="dest-card">
+            <img src="images/destinations/vang-vieng-laos.jpeg" alt="Sweeping mountain valley view from a rocky summit above Vang Vieng, Laos, with a winding road below" loading="lazy">
+            <div class="dest-card__overlay">
+              <div><div class="dest-card__name">Laos</div><div class="dest-card__count">3 stories</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other continents placeholders -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
+        <div style="background:var(--white); border-radius:8px; padding:28px; border:2px dashed var(--sand-dark); text-align:center;">
+          <div style="font-size:1.8rem; margin-bottom:10px;">🌎</div>
+          <h3 style="margin-bottom:8px;">Americas</h3>
+          <p style="color:var(--text-muted); font-size:0.85rem;">Add your South & North America destinations here as you visit them.</p>
+        </div>
+        <div style="background:var(--white); border-radius:8px; padding:28px; border:2px dashed var(--sand-dark); text-align:center;">
+          <div style="font-size:1.8rem; margin-bottom:10px;">🌍</div>
+          <h3 style="margin-bottom:8px;">Africa</h3>
+          <p style="color:var(--text-muted); font-size:0.85rem;">Add your African destinations here as you visit them.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COUNTRIES VISITED LIST -->
+  <section class="section section--cream">
+    <div class="container">
+      <p class="section-label">The Full List</p>
+      <h2 class="section-title">Every Country</h2>
+      <div class="divider"></div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
+        <div class="tag-chip">✓ Romania</div>
+        <div class="tag-chip">✓ Vietnam</div>
+        <div class="tag-chip">✓ Portugal</div>
+        <div class="tag-chip">✓ Thailand</div>
+        <div class="tag-chip">✓ Bali</div>
+        <div class="tag-chip">✓ Laos</div>
+        <div class="tag-chip">✓ Malaysia</div>
+        <div class="tag-chip">✓ Singapore</div>
+        <div class="tag-chip">✓ Nepal</div>
+        <div class="tag-chip">✓ France</div>
+        <div class="tag-chip">✓ Italy</div>
+        <div class="tag-chip">✓ Spain</div>
+        <div class="tag-chip">✓ Ukraine</div>
+        <div class="tag-chip">✓ Spain</div>
+      </div>
+      <p style="color:var(--text-muted); font-size:0.8rem; margin-top:16px;">✓ = guide published</p>
+    </div>
+  </section>
+
+  <section class="newsletter-band">
+    <div class="container">
+      <h2>New destination guides in your inbox</h2>
+      <p>When I write about a new country, you'll be the first to know.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="your@email.com" required/>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <div class="footer__brand-name">Anca <span>Rada</span></div>
+          <p class="footer__tagline">Solo traveller. Sports enthusiast. Remote worker. Writing real stories from around the world.</p>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/ancar.l/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="TikTok">TK</a>
+            <a href="#" aria-label="YouTube">YT</a>
+            <a href="#" aria-label="Pinterest">PT</a>
+            <a href="https://www.strava.com/athletes/66986695" target="_blank" rel="noopener" aria-label="Strava">STR</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Explore</div>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="solo-travel.html">Solo Female Travel</a></li>
+            <li><a href="book.html">My Book</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Topics</div>
+          <ul>
+            <li><a href="#">Remote Work</a></li>
+            <li><a href="#">Hiking & Sports</a></li>
+            <li><a href="#">Budget Travel</a></li>
+            <li><a href="#">Packing Guides</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">More</div>
+          <ul>
+            <li><a href="about.html">About Anca</a></li>
+            <li><a href="contact.html">Work Together</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2025 Anca Rada. All rights reserved.</span>
+        <span>Made with ♥ on the road</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
