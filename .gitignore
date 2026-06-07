@@ -19,6 +19,14 @@ Desktop.ini
 node_modules/
 npm-debug.log*
 
+# Local app settings (Claude / Cowork)
+.claude/
+
+# Large image-original backups — keep these OFF the repo, store elsewhere
+*.tar
+*.tar.gz
+images-originals-backup*
+
 # NOTE: images/ is intentionally tracked in git.
 # This is a static site — git push = deploy. Images must be in the repo.
 # If the repo grows too large, consider git-lfs or a CDN (Cloudinary, etc.).
