@@ -60,23 +60,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- Blog filter tabs ----
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.closest('.blog-filters').querySelectorAll('.filter-btn')
-        .forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      // Filter logic: data-filter on btn, data-category on cards
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.card[data-category]').forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
+  // ---- Blog: infinite scroll + filter tabs ----
+  const blogGrid = document.querySelector('.cards-grid');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  if (blogGrid && filterBtns.length) {
+    const INITIAL = 9;
+    const BATCH = 6;
+
+    const allCards = () => Array.from(blogGrid.querySelectorAll('article.card'));
+
+    function resetPagination() {
+      allCards().forEach((c, i) => c.classList.toggle('scroll-hidden', i >= INITIAL));
+    }
+
+    function revealMore() {
+      Array.from(blogGrid.querySelectorAll('article.card.scroll-hidden'))
+        .slice(0, BATCH)
+        .forEach(c => c.classList.remove('scroll-hidden'));
+    }
+
+    const sentinel = document.createElement('div');
+    sentinel.className = 'scroll-sentinel';
+    blogGrid.insertAdjacentElement('afterend', sentinel);
+
+    new IntersectionObserver(
+      entries => { if (entries[0].isIntersecting) revealMore(); },
+      { rootMargin: '300px' }
+    ).observe(sentinel);
+
+    if (!new URLSearchParams(window.location.search).get('country')) {
+      resetPagination();
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+
+        allCards().forEach(c => c.classList.remove('scroll-hidden'));
+        allCards().forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (filter === 'all') resetPagination();
       });
     });
-  });
+  }
 
   // ---- Newsletter / notify form ----
   const SUBSCRIBE_URL = 'https://crimson-scene-cb02.anca-rada.workers.dev';

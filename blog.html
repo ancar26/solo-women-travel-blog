@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <style>.scroll-hidden{display:none}</style>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Anca Rada"/>
   <meta property="og:url" content="https://www.ancaventures.com/blog.html"/>
@@ -224,6 +225,22 @@
               <span class="audio-label">Listen</span>
             </div>
             <a href="ice-climbing-bride-waterfall.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="sports" data-country="romania">
+          <div class="card__img"><img src="images/blog/run-your-age/seek-discomfort-always-my-motto.jpeg" alt="Anca with arms raised on a vast boulder field in the Retezat, Romania" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Sports &amp; Adventure</p>
+            <h3 class="card__title">Run Your Age in the Retezat: The Weekend That Tested Everything</h3>
+            <p class="card__excerpt">30km in the Romanian Carpathians for my 30th birthday. Boulder fields, glacial lakes, and the specific satisfaction of doing something hard on purpose.</p>
+            <p class="card__meta">Retezat, Romania · 12 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="retezat-run-your-age.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
           </div>
         </article>
 
@@ -550,6 +567,22 @@
           </div>
         </article>
 
+        <article class="card" data-category="remote" data-country="vietnam">
+          <div class="card__img"><img src="images/blog/vietnam-low-budget/markets-in-vietnam.jpeg" alt="Night market in Vietnam — tropical fruit stalls piled high under warm lights" loading="lazy"></div>
+          <div class="card__body">
+            <p class="card__tag">Remote Work</p>
+            <h3 class="card__title">How I Spent 3 Weeks in Vietnam on a Remote Work Budget</h3>
+            <p class="card__excerpt">Cafés with fast Wi-Fi, $5 phở, morning glory for a dollar, and lobster on a pavement stool. Here's what it actually costs.</p>
+            <p class="card__meta">Vietnam · 8 min read</p>
+            <div class="card__audio">
+              <button class="audio-play-btn" aria-label="Play voiceover"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></button>
+              <div class="audio-bar"><div class="audio-bar__fill"></div></div>
+              <span class="audio-label">Listen</span>
+            </div>
+            <a href="vietnam-remote-work.html" class="btn btn-outline" style="margin-top:14px; font-size:0.78rem; padding:8px 18px;">Read the story →</a>
+          </div>
+        </article>
+
         <!-- <article class="card" data-category="solo">
           <div class="card__img"><img src="images/blog/scooter-asia/going-by-scooter.jpeg" alt="Anca in a helmet and mask on a scooter in a Thai city" loading="lazy"></div>
           <div class="card__body">
@@ -762,11 +795,6 @@
 
       </div>
 
-      <!-- Load more placeholder -->
-      <div style="text-align:center; margin-top:48px;">
-        <button class="btn btn-outline">Load more stories</button>
-      </div>
-
     </div>
   </section>
 
@@ -868,6 +896,7 @@
         if (countries.indexOf(country) === -1) {
           a.style.display = 'none';
         } else {
+          a.classList.remove('scroll-hidden');
           visible++;
         }
       });
