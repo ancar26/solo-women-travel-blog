@@ -79,14 +79,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---- Newsletter / notify form ----
+  const SUBSCRIBE_URL = 'https://crimson-scene-cb02.anca-rada.workers.dev';
   document.querySelectorAll('.newsletter-form, .book-notify').forEach(form => {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const input = form.querySelector('input[type="email"]');
-      if (input && input.value) {
-        const btn = form.querySelector('button, .btn');
-        if (btn) { btn.textContent = '✓ You\'re in!'; btn.style.background = '#6B7C4D'; }
-        input.value = '';
+      const btn = form.querySelector('button, .btn');
+      if (!input || !input.value) return;
+
+      const originalText = btn ? btn.textContent : '';
+      if (btn) { btn.textContent = 'Subscribing…'; btn.disabled = true; }
+
+      try {
+        const res = await fetch(SUBSCRIBE_URL, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ email: input.value }),
+        });
+        if (res.ok) {
+          if (btn) { btn.textContent = '✓ You\'re in!'; btn.style.background = '#6B7C4D'; }
+          input.value = '';
+        } else {
+          throw new Error('failed');
+        }
+      } catch {
+        if (btn) { btn.textContent = 'Try again'; btn.disabled = false; btn.style.background = ''; }
+        setTimeout(() => { if (btn) { btn.textContent = originalText; btn.disabled = false; } }, 3000);
       }
     });
   });
