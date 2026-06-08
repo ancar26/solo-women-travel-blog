@@ -25,6 +25,26 @@
     a.dest-card:hover{opacity:.85;}
     .dest-card__count--soon{color:#b0a090;font-style:italic;}
     @media (max-width:480px){.dest-carousel .dest-card{flex:0 0 72%;}}
+    .photo-wall{columns:3;column-gap:12px;}
+    .photo-wall__item{break-inside:avoid;margin-bottom:12px;position:relative;overflow:hidden;border-radius:6px;cursor:default;}
+    .photo-wall__item img{width:100%;display:block;transition:transform .4s ease;}
+    .photo-wall__item:hover img{transform:scale(1.04);}
+    .photo-wall__caption{position:absolute;bottom:0;left:0;right:0;padding:32px 12px 12px;background:linear-gradient(transparent,rgba(44,24,16,.72));color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;opacity:0;transition:opacity .3s ease;}
+    .photo-wall__item:hover .photo-wall__caption{opacity:1;}
+    @media (max-width:768px){.photo-wall{columns:2;} .photo-wall__caption{opacity:1;}}
+    @media (max-width:480px){.photo-wall{columns:1;}}
+    .photo-wall__item{cursor:pointer;}
+    .lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(20,10,5,.92);align-items:center;justify-content:center;padding:24px;}
+    .lightbox.is-open{display:flex;}
+    .lightbox__inner{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;}
+    .lightbox__img{max-width:100%;max-height:80vh;object-fit:contain;border-radius:4px;display:block;}
+    .lightbox__caption{color:rgba(242,232,217,.85);font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-top:14px;text-align:center;}
+    .lightbox__close{position:fixed;top:20px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s;}
+    .lightbox__close:hover{opacity:1;}
+    .lightbox__arrow{position:fixed;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;opacity:.6;transition:opacity .2s;padding:8px;}
+    .lightbox__arrow:hover{opacity:1;}
+    .lightbox__arrow--prev{left:12px;}
+    .lightbox__arrow--next{right:12px;}
   </style>
 </head>
 <body>
@@ -61,7 +81,7 @@
       <div class="stats-row" style="justify-content:center;">
         <div class="stat"><div class="stat__num">20+</div><div class="stat__label">Countries</div></div>
         <div class="stat"><div class="stat__num">2</div><div class="stat__label">Continents</div></div>
-        <div class="stat"><div class="stat__num">4+</div><div class="stat__label">Years Travelling</div></div>
+        <div class="stat"><div class="stat__num">2+</div><div class="stat__label">Years Travelling</div></div>
         <div class="stat"><div class="stat__num">100+</div><div class="stat__label">Stories Written</div></div>
       </div>
     </div>
@@ -123,7 +143,7 @@
             </div>
           </a>
           <a class="dest-card" href="blog.html?country=france">
-            <img src="images/destinations/nice, france.jpeg" alt="Colourful old town rooftops and the Bay of Angels, Nice, France" loading="lazy">
+            <img src="images/destinations/nice-france.jpeg" alt="Colourful old town rooftops and the Bay of Angels, Nice, France" loading="lazy">
             <div class="dest-card__overlay">
               <div><div class="dest-card__name">France</div><div class="dest-card__count" data-country="france">1 story</div></div>
             </div>
@@ -283,6 +303,102 @@
         <div class="tag-chip">✓ Ukraine</div>
       </div>
       <p style="color:var(--text-muted); font-size:0.8rem; margin-top:16px;">✓ = guide published</p>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section class="section section--sand">
+    <div class="container">
+      <p class="section-label">Through My Lens</p>
+      <h2 class="section-title">Moments, Landscapes & Things I Spotted</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted); max-width:600px; margin-bottom:40px;">Real shots from the road — sunrises I woke up early for, landscapes I hiked into, and the ordinary moments that turned out to be anything but.</p>
+      <div class="photo-wall">
+        <div class="photo-wall__item">
+          <img src="images/hero/bali-sunrise-new-beginning.jpeg" alt="Bali Sunrise, New Beginning" loading="lazy">
+          <div class="photo-wall__caption">The morning I decided to stay a little longer</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/anapurna-nepal-morning-hikes.jpeg" alt="Annapurna Nepal Morning Hikes" loading="lazy">
+          <div class="photo-wall__caption">Up before the mountains wake up — Annapurna</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/borneo-sea-slice-of-paradise-sabah-region.jpeg" alt="Borneo Sea — Slice of Paradise, Sabah Region" loading="lazy">
+          <div class="photo-wall__caption">Some places you find on purpose. Others find you.</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/amed-sunrise-morning.jpeg" alt="Amed Sunrise Morning" loading="lazy">
+          <div class="photo-wall__caption">Amed, 6am. Worth every alarm.</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/tenerife-above-the-cloud.jpeg" alt="Tenerife Above the Cloud" loading="lazy">
+          <div class="photo-wall__caption">When you hike high enough, the world disappears</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/get-lost-in-a-tea-plantation.jpeg" alt="Get Lost in a Tea Plantation" loading="lazy">
+          <div class="photo-wall__caption">The kind of lost you don't mind being</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/borneo-river-kibantangan-sunset.jpeg" alt="Borneo River Kinabatangan Sunset" loading="lazy">
+          <div class="photo-wall__caption">The Kinabatangan at golden hour — completely still</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/madeira-paradise.jpeg" alt="Madeira Paradise" loading="lazy">
+          <div class="photo-wall__caption">Madeira doesn't look real. It does this on purpose.</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/glowing-light-sunset-in-amed-bali.jpeg" alt="Glowing Light Sunset in Amed, Bali" loading="lazy">
+          <div class="photo-wall__caption">Amed turns gold every single evening</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/sao-miguel-paradise-clouds.jpeg" alt="Sao Miguel Paradise Clouds" loading="lazy">
+          <div class="photo-wall__caption">Sao Miguel on a moody day hits different</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/italy-venice-cycling-beauties-encounter.jpeg" alt="Italy, Venice — Cycling Beauties Encounter" loading="lazy">
+          <div class="photo-wall__caption">Two wheels and a camera in Venice</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/living-by-the-ocean.jpeg" alt="Living by the Ocean" loading="lazy">
+          <div class="photo-wall__caption">Home for a while</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/the-green-of-cameron-islands-malaysia.jpeg" alt="The Green of Cameron Islands, Malaysia" loading="lazy">
+          <div class="photo-wall__caption">Cameron Highlands — everything is green and everything smells like rain</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/snow-hiking-local-village-nepal.jpeg" alt="Snow Hiking, Local Village, Nepal" loading="lazy">
+          <div class="photo-wall__caption">Nepal in winter — quieter, harder, better</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/driving-on-a-paradise-island.jpeg" alt="Driving on a Paradise Island" loading="lazy">
+          <div class="photo-wall__caption">No map, no plan, just this</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/thailand-overwehlming-sunset.jpeg" alt="Thailand Overwhelming Sunset" loading="lazy">
+          <div class="photo-wall__caption">Thailand sunsets are genuinely unfair</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/romania-madaras-ski-camp.jpeg" alt="Romania, Madaras Ski Camp" loading="lazy">
+          <div class="photo-wall__caption">Where it all started — Madaras, Romania</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/sao-miguel-paradise.jpeg" alt="Sao Miguel Paradise" loading="lazy">
+          <div class="photo-wall__caption">The Azores will ruin you for other islands</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/batu-ferringhi-malaysia-magic-sunset-during-fireworks.jpeg" alt="Batu Ferringhi, Malaysia — Magic Sunset During Fireworks" loading="lazy">
+          <div class="photo-wall__caption">Batu Ferringhi — they lit fireworks. The sky did the rest.</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/hiking-nepal-anapurna.jpeg" alt="Hiking Nepal, Annapurna" loading="lazy">
+          <div class="photo-wall__caption">Every step hurts. Every view is worth it.</div>
+        </div>
+        <div class="photo-wall__item">
+          <img src="images/hero/yoga-at-sunset-tenerife.jpeg" alt="Yoga at Sunset, Tenerife" loading="lazy">
+          <div class="photo-wall__caption">I'm not a yoga person. Tenerife changed that for one evening.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -472,9 +588,8 @@
           <p class="footer__tagline">Solo traveller. Sports enthusiast. Remote worker. Writing real stories from around the world.</p>
           <div class="footer__socials">
             <a href="https://www.instagram.com/ancar.l/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="TikTok">TK</a>
-            <a href="#" aria-label="YouTube">YT</a>
-            <a href="#" aria-label="Pinterest">PT</a>
+            <a href="https://www.facebook.com/profile.php?id=100088555720838" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+            <a href="https://www.linkedin.com/in/anca-rada/" target="_blank" rel="noopener" aria-label="LinkedIn">LI</a>
             <a href="https://www.strava.com/athletes/66986695" target="_blank" rel="noopener" aria-label="Strava">STR</a>
           </div>
         </div>
@@ -512,6 +627,17 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox__close" id="lb-close" aria-label="Close">✕</button>
+    <button class="lightbox__arrow lightbox__arrow--prev" id="lb-prev" aria-label="Previous">‹</button>
+    <div class="lightbox__inner">
+      <img class="lightbox__img" id="lb-img" src="" alt="">
+      <div class="lightbox__caption" id="lb-caption"></div>
+    </div>
+    <button class="lightbox__arrow lightbox__arrow--next" id="lb-next" aria-label="Next">›</button>
+  </div>
+
   <script src="js/main.js"></script>
   <script>
     // Carousel arrows
@@ -547,6 +673,49 @@
         });
       })
       .catch(function(){});
+
+    // Lightbox
+    (function(){
+      var items = Array.from(document.querySelectorAll('.photo-wall__item'));
+      var lb = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lb-img');
+      var lbCap = document.getElementById('lb-caption');
+      var current = 0;
+
+      function open(index) {
+        current = index;
+        var item = items[index];
+        lbImg.src = item.querySelector('img').src;
+        lbImg.alt = item.querySelector('img').alt;
+        lbCap.textContent = item.querySelector('.photo-wall__caption').textContent;
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lb.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      function prev() { open((current - 1 + items.length) % items.length); }
+      function next() { open((current + 1) % items.length); }
+
+      items.forEach(function(item, i) {
+        item.addEventListener('click', function() { open(i); });
+      });
+
+      document.getElementById('lb-close').addEventListener('click', close);
+      document.getElementById('lb-prev').addEventListener('click', function(e){ e.stopPropagation(); prev(); });
+      document.getElementById('lb-next').addEventListener('click', function(e){ e.stopPropagation(); next(); });
+      lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+
+      document.addEventListener('keydown', function(e){
+        if (!lb.classList.contains('is-open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') prev();
+        if (e.key === 'ArrowRight') next();
+      });
+    })();
   </script>
 </body>
 </html>
