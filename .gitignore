@@ -27,6 +27,9 @@ npm-debug.log*
 *.tar.gz
 images-originals-backup*
 
+# ElevenLabs voiceover scripts — local only, never push
+elevenlabs-scripts.txt
+
 # NOTE: images/ is intentionally tracked in git.
 # This is a static site — git push = deploy. Images must be in the repo.
 # If the repo grows too large, consider git-lfs or a CDN (Cloudinary, etc.).
