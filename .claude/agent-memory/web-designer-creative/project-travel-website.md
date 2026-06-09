@@ -60,6 +60,17 @@ Personal travel blog for Anca Rada — solo female traveller, sports enthusiast,
 - Card 2 (mindset/first trip): `about/6304A36B` — Anca arms wide over Azores crater lake
 - Card 3 (Romania solo female): `about/9B13713A` — Anca jumping in Romanian canyon
 
+## Logo / wordmark
+
+**Brand name**: Ancaventures (replaces "Anca Rada" across all pages)
+**Chosen concept**: Concept C — "Stacked Weight Run"
+**Technique**: Single Playfair Display wordmark; "Anca" is italic 700 in terracotta, "ventures" is roman 700 in brown-dark/sand depending on context. No separator symbol — the italic-to-roman axis transition is the accent.
+**Nav colours**: logo-anca = #C4622D (--terracotta), logo-ventures = #2C1810 (--brown-dark)
+**Footer colours**: logo-anca = #D97A45 (--terracotta-light), logo-ventures = #F2E8D9 (--sand)
+**CSS classes**: `.logo-anca` (italic, letter-spacing 0.01em), `.logo-ventures` (normal, letter-spacing 0.02em)
+**Applied to**: all 56 HTML files and css/style.css
+**Rejected**: concept with dot-accent separator (felt like a trick); concept with ANCA/slash/ventures (too fragmented)
+
 ## Notable photos not yet used (available for future pages)
 
 - `about/A30D3DAD` — Anca on Teide summit at sunrise, arms wide — extremely powerful

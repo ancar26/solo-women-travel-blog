@@ -27,35 +27,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ---- Voiceover player (placeholder UI) ----
-  document.querySelectorAll('.audio-play-btn').forEach(btn => {
-    let playing = false;
+  // ---- Voiceover player ----
+  // Buttons with data-audio="audio/filename.mp3" use real ElevenLabs audio.
+  // Buttons without data-audio are silently inert until audio is added.
+  const PLAY_ICON  = `<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>`;
+  const PAUSE_ICON = `<svg viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16"/><rect x="15" y="4" width="4" height="16"/></svg>`;
+
+  let activeAudio = null;
+  let activeBtn   = null;
+
+  function resetPlayer(btn, audio, bar, label) {
+    audio.pause();
+    audio.currentTime = 0;
+    btn.innerHTML = PLAY_ICON;
+    if (bar)   bar.style.width = '0%';
+    if (label) label.textContent = 'Listen to this story';
+  }
+
+  document.querySelectorAll('.audio-play-btn[data-audio]').forEach(btn => {
+    const audio  = new Audio(btn.dataset.audio);
+    const wrap   = btn.closest('.card__audio') || btn.parentElement;
+    const bar    = wrap.querySelector('.audio-bar__fill');
+    const label  = wrap.querySelector('.audio-label');
+
+    audio.addEventListener('timeupdate', () => {
+      if (bar && audio.duration) {
+        bar.style.width = (audio.currentTime / audio.duration * 100) + '%';
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      resetPlayer(btn, audio, bar, label);
+      activeAudio = null;
+      activeBtn   = null;
+    });
+
     btn.addEventListener('click', () => {
-      playing = !playing;
-      const bar = btn.closest('.card__audio')?.querySelector('.audio-bar__fill');
-      const label = btn.closest('.card__audio')?.querySelector('.audio-label');
-      btn.innerHTML = playing
-        ? `<svg viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16"/><rect x="15" y="4" width="4" height="16"/></svg>`
-        : `<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>`;
-      if (label) label.textContent = playing ? 'Playing voiceover...' : 'Listen to this story';
-      // Simulate progress
-      if (playing && bar) {
-        let pct = 0;
-        const interval = setInterval(() => {
-          pct += 0.5;
-          bar.style.width = pct + '%';
-          if (pct >= 100 || !playing) {
-            clearInterval(interval);
-            bar.style.width = '0%';
-            playing = false;
-            btn.innerHTML = `<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>`;
-            if (label) label.textContent = 'Listen to this story';
-          }
-        }, 100);
-        btn._interval = interval;
-      } else if (btn._interval) {
-        clearInterval(btn._interval);
-        if (bar) bar.style.width = '0%';
+      // Stop any other playing track
+      if (activeAudio && activeAudio !== audio) {
+        const prevWrap  = activeBtn.closest('.card__audio') || activeBtn.parentElement;
+        const prevBar   = prevWrap.querySelector('.audio-bar__fill');
+        const prevLabel = prevWrap.querySelector('.audio-label');
+        resetPlayer(activeBtn, activeAudio, prevBar, prevLabel);
+      }
+
+      if (audio.paused) {
+        audio.play();
+        btn.innerHTML = PAUSE_ICON;
+        if (label) label.textContent = 'Playing...';
+        activeAudio = audio;
+        activeBtn   = btn;
+      } else {
+        resetPlayer(btn, audio, bar, label);
+        activeAudio = null;
+        activeBtn   = null;
       }
     });
   });
