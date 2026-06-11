@@ -45,9 +45,11 @@ Every page's `<head>` follows this order:
 ```
 
 ### Categories in use (article-tag / breadcrumb text)
+
 `Sports & Adventure`, `Travel Stories`, `Solo Female Travel`, `Remote Work`, `Southeast Asia`, `Safety`
 
 ### blog.html card → `data-category` mapping
+
 `Sports & Adventure` → `sports`, `Travel Stories`/`Southeast Asia` → `travel`, `Solo Female Travel`/`Safety` → `solo`, `Remote Work` → `remote`
 
 ## Checklist: adding a new blog post
