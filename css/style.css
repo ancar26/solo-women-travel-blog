@@ -899,6 +899,31 @@ p { margin-bottom: 1rem; color: var(--text-main); }
   border-radius: 0 4px 4px 0;
   line-height: 1.5;
 }
+.affiliate-box {
+  background: var(--sand);
+  border: 1px solid var(--sand-dark);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 40px 0;
+}
+.affiliate-box h3 {
+  font-family: var(--font-heading);
+  color: var(--brown-dark);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.affiliate-box p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.affiliate-box .affiliate-disclosure {
+  font-size: 0.72rem;
+  color: #b0a090;
+  margin-top: 14px;
+  margin-bottom: 0;
+}
 .article-img {
   width: 100%;
   border-radius: 6px;
