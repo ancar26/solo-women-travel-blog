@@ -21,6 +21,8 @@ Every page's `<head>` follows this order:
 
 **Rule: `canonical`, `og:url`, and the JSON-LD `mainEntityOfPage.@id` must always match and use `https://ancaventures.com/...` (no www, no trailing slash on filenames).**
 
+**Homepage exception:** `index.html` is the apex root. Its `canonical`, `og:url`, JSON-LD `WebSite.url`, and the sitemap `<loc>` must all be `https://ancaventures.com/` (root, NOT `/index.html`), and every internal link to the homepage (nav logo, "Home") must be `href="/"` (never `href="index.html"`). This prevents Google flagging `/index.html` as "Duplicate without user-selected canonical".
+
 ## JSON-LD by page type
 
 - **Blog posts** (any page with `<div class="article-header">`): `BlogPosting` schema with `headline` (= `<h1>` text), `description` (= meta description), `image` (= og:image), `author` (Person "Anca Rada", `/about.html`, with `sameAs` social links), `publisher` (Organization "Anca Ventures", logo = `favicon-512.png`), `mainEntityOfPage` (canonical URL), `articleSection` (= article-tag text, plain `&` not `&amp;`).
