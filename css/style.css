@@ -318,7 +318,16 @@ p { margin-bottom: 1rem; color: var(--text-main); }
 .hero__bg img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center;
   opacity: 0.55;
+}
+/* Gradient veil: adds depth and masks the softness of upscaled hero photos */
+.hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(44,24,16,0.25) 0%, rgba(44,24,16,0.20) 45%, rgba(44,24,16,0.55) 100%);
+  pointer-events: none;
 }
 .hero__bg-placeholder {
   width: 100%; height: 100%;
@@ -811,10 +820,16 @@ p { margin-bottom: 1rem; color: var(--text-main); }
    ============================================ */
 .article-hero-img {
   width: 100%;
+  /* Cap the on-screen width so a 768px source isn't stretched edge-to-edge on
+     wide monitors; centered with a dark frame so any margin reads as intentional. */
+  max-width: 1100px;
+  margin: 0 auto;
   height: 40vh;
   min-height: 240px;
   max-height: 420px;
   object-fit: cover;
+  object-position: center;
+  background: var(--brown-dark);
   display: block;
 }
 .article-header {
@@ -1001,9 +1016,14 @@ p { margin-bottom: 1rem; color: var(--text-main); }
   gap: 40px;
 }
 .featured-post-grid__img {
-  width: 100%; height: 100%;
-  min-height: 380px;
+  width: 100%;
+  /* Controlled aspect box (instead of stretching to full grid height) keeps the
+     768px source from being blown up into a tall slot — far less upscaling. */
+  aspect-ratio: 4 / 3;
+  max-height: 460px;
   object-fit: cover;
+  object-position: center;
+  align-self: center;
   display: block;
 }
 .featured-post-grid__content {
