@@ -75,7 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
         activeAudio = audio;
         activeBtn   = btn;
       } else {
-        resetPlayer(btn, audio, bar, label);
+        audio.pause();
+        btn.innerHTML = PLAY_ICON;
+        if (label) label.textContent = 'Listen to this story';
         activeAudio = null;
         activeBtn   = null;
       }
