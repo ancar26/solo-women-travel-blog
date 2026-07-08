@@ -27,9 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ---- Voiceover player ----
-  // Buttons with data-audio="audio/filename.mp3" use real ElevenLabs audio.
-  // Buttons without data-audio are silently inert until audio is added.
+  // ---- Audio player ----
   const PLAY_ICON  = `<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>`;
   const PAUSE_ICON = `<svg viewBox="0 0 24 24"><rect x="5" y="4" width="4" height="16"/><rect x="15" y="4" width="4" height="16"/></svg>`;
 
@@ -63,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btn.addEventListener('click', () => {
-      // Stop any other playing track
       if (activeAudio && activeAudio !== audio) {
         const prevWrap  = activeBtn.closest('.card__audio') || activeBtn.parentElement;
         const prevBar   = prevWrap.querySelector('.audio-bar__fill');
