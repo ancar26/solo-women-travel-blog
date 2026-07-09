@@ -113,7 +113,22 @@ document.addEventListener('DOMContentLoaded', () => {
       { rootMargin: '300px' }
     ).observe(sentinel);
 
-    if (!new URLSearchParams(window.location.search).get('country')) {
+    const countryParam = new URLSearchParams(window.location.search).get('country');
+
+    if (countryParam) {
+      // Filter cards by country and show all matches (no pagination limit)
+      allCards().forEach(card => {
+        const countries = (card.dataset.country || '').split(' ');
+        card.style.display = countries.includes(countryParam) ? '' : 'none';
+      });
+
+      // Show a dismissible banner above the grid
+      const label = countryParam.charAt(0).toUpperCase() + countryParam.slice(1);
+      const banner = document.createElement('p');
+      banner.className = 'country-filter-banner';
+      banner.innerHTML = `Showing stories from <strong>${label}</strong> &nbsp;·&nbsp; <a href="blog.html">Show all</a>`;
+      blogGrid.insertAdjacentElement('beforebegin', banner);
+    } else {
       resetPagination();
     }
 
